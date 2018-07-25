@@ -1,0 +1,31 @@
+#include "linkedListFuncs.h"
+#include "moreLinkedListFuncs.h"
+#include "tddFuncs.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  //Test your insertNodeToSortedList function
+  //Test your code extensively
+  assertTrue(true);
+  int fiveNums[3]={42,57,61};
+
+  LinkedList *list = arrayToLinkedList(fiveNums,3);
+  assertEquals( "[42]->[57]->[61]->null", 
+		linkedListToString(list),
+		"linkedListToString(list)");
+  insertNodeToSortedList(list,25);
+   assertEquals( "[25]->[42]->[57]->[61]->null", 
+		linkedListToString(list),
+		"list after adding 25");
+   insertNodeToSortedList(list,58);
+    assertEquals( "[25]->[42]->[57]->[58]->[61]->null", 
+		linkedListToString(list),
+		"list after adding 58");
+    insertNodeToSortedList(list,62);
+   assertEquals( "[25]->[42]->[57]->[58]->[61]->[62]->null", 
+		linkedListToString(list),
+		"list after adding 62");
+  return 0;
+}
+

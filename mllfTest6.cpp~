@@ -1,0 +1,106 @@
+#include "linkedListFuncs.h"
+#include "moreLinkedListFuncs.h"
+#include "tddFuncs.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+  //Test your deleteNodeRecursively and deleteNodeIteratively functions
+  //Test your code extensively
+
+int threeNums[3]={42,57,61};
+  LinkedList *list = arrayToLinkedList(threeNums,3);
+   assertEquals( "[42]->[57]->[61]->null", 
+		linkedListToString(list),
+		"linkedListToString(list)");
+   deleteNodeIteratively(list,42);
+    assertEquals( "[57]->[61]->null", 
+		linkedListToString(list),
+		"linkedListToString(list)");
+
+
+int Nums[3]={42,57,61};
+  LinkedList *list1 = arrayToLinkedList(Nums,3);
+   assertEquals( "[42]->[57]->[61]->null", 
+		linkedListToString(list1),
+		"linkedListToString(list1)");
+    deleteNodeIteratively(list1,57);
+    assertEquals( "[42]->[61]->null", 
+		linkedListToString(list1),
+		"linkedListToString(list1)");
+
+
+    int Num[6]={42,57,61,1,2,3};
+  LinkedList *list2 = arrayToLinkedList(Num,6);
+   assertEquals( "[42]->[57]->[61]->[1]->[2]->[3]->null", 
+		linkedListToString(list2),
+		"linkedListToString(list2)");
+    deleteNodeIteratively(list2,1);
+    assertEquals( "[42]->[57]->[61]->[2]->[3]->null", 
+		linkedListToString(list2),
+		"linkedListToString(list2)");
+
+ int a[1]={42};
+  LinkedList *list3 = arrayToLinkedList(a,1);
+   assertEquals( "[42]->null", 
+		 linkedListToString(list3),
+		"linkedListToString(list3)");
+    deleteNodeIteratively(list3,42);
+    assertEquals( "null", 
+		linkedListToString(list3),
+		"linkedListToString(list3)"); 
+
+
+
+    int b[6]={42,57,61,1,2,3};
+  LinkedList *list4 = arrayToLinkedList(b,6);
+   assertEquals( "[42]->[57]->[61]->[1]->[2]->[3]->null", 
+		linkedListToString(list4),
+		"linkedListToString(list4)");
+    deleteNodeIteratively(list4,3);
+    assertEquals( "[42]->[57]->[61]->[1]->[2]->null", 
+		linkedListToString(list4),
+		"linkedListToString(list4)");
+   
+   
+
+    int c[6]={1,2,2,1,2,1};
+  LinkedList *list5 = arrayToLinkedList(c,6);
+   assertEquals( "[1]->[2]->[2]->[1]->[2]->[1]->null", 
+		linkedListToString(list5),
+		"linkedListToString(list5)");
+    deleteNodeIteratively(list5,1);
+    assertEquals( "[2]->[2]->[2]->null", 
+		linkedListToString(list5),
+		"linkedListToString(list5)");
+   
+
+
+    int e[6]={1,1,2,1,1,1};
+  LinkedList *list7 = arrayToLinkedList(e,6);
+   assertEquals( "[1]->[1]->[2]->[1]->[1]->[1]->null", 
+		linkedListToString(list7),
+		"linkedListToString(list7)");
+    deleteNodeIteratively(list7,1);
+    
+    assertEquals( "[2]->null", 
+		linkedListToString(list7),
+		"linkedListToString(list7)");
+     int d[6]={1,1,1,1,1,1};
+  LinkedList *list6 = arrayToLinkedList(d,6);
+   assertEquals( "[1]->[1]->[1]->[1]->[1]->[1]->null", 
+		linkedListToString(list6),
+		"linkedListToString(list6)");
+    deleteNodeIteratively(list6,1);
+    assertEquals( "null", 
+		linkedListToString(list6),
+		"linkedListToString(list6)");
+    
+   
+   
+ 
+}
+  
+  
+ 
+
